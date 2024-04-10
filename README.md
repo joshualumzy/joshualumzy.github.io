@@ -1,6 +1,6 @@
 # joshualumzy.github.io
 
-# Data scientist
+# Data Scientist
 
 # Medium
 https://medium.com/@joshualumzy
