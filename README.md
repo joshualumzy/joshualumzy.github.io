@@ -1,4 +1,5 @@
 # Data Scientist
 
 ### Medium
-https://medium.com/@joshualumzy
+<a href="[http://www.something.com](https://medium.com/@joshualumzy)"> Joshua's Medium </a>
+
