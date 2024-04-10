@@ -1,2 +1,6 @@
 # joshualumzy.github.io
-My portfolio website
+
+# Data scientist
+
+# Medium
+https://medium.com/@joshualumzy
