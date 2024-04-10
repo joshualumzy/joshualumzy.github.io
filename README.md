@@ -1,5 +1,3 @@
-# joshualumzy.github.io
-
 # Data Scientist
 
 ### Medium
