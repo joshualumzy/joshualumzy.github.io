@@ -2,5 +2,5 @@
 
 # Data Scientist
 
-# Medium
+### Medium
 https://medium.com/@joshualumzy
