@@ -111,3 +111,4 @@ footer{padding:var(--s-4) 0;font-size:.88rem;border-top:1px solid var(--line);ma
 .cursor{position:fixed;left:0;top:0;width:30px;height:30px;margin:-15px 0 0 -15px;border:1px solid var(--text);border-radius:50%;pointer-events:none;z-index:90;opacity:0;transition:opacity var(--d-med),width var(--d-med) var(--ease),height var(--d-med) var(--ease),margin var(--d-med) var(--ease),background var(--d-med)}
 .cursor.on{opacity:.55}
 .cursor.big{width:56px;height:56px;margin:-28px 0 0 -28px;background:color-mix(in srgb,var(--accent) 55%,transparent);border-color:transparent;opacity:1}
+.earlier{margin-top:var(--s-3);max-width:38rem;color:var(--muted)}

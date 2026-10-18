@@ -1,14 +1,14 @@
 // Replace every placeholder here — components never need editing for content.
 export const content = {
   site: {
-    title: "Josh Lum — AI Engineer",
-    legalName: "Joshua Lum",
-    description: "Josh Lum: ex-TikTok ML specialist and NUS Masters of Computing student building practical AI and LLM systems.",
+    title: "Josh — AI Engineer",
+    legalName: "Josh",
+    description: "Josh: ex-TikTok ML specialist and NUS Masters of Computing student building cost-effective, production-ready AI agents on the cloud.",
   },
   hero: {
     name: "Josh",
     eyebrow: "MComp @ NUS · ex-TikTok",
-    tagline: "I turn real pain points into software that does things better, cheaper or in a way that wasn't possible before. 3+ years shipping ML at TikTok, now going deeper on LLMs and agentic AI.",
+    tagline: "I build AI agents that are cheap and reliable enough to run in production, on the cloud. 3+ years shipping ML at TikTok, now deepening it with a Masters at NUS.",
     links: [
       { label: "Resume", href: "/resume.pdf", primary: true },
       { label: "GitHub", href: "https://github.com/joshualumzy" },
@@ -24,15 +24,34 @@ export const content = {
     demo: "#",
     repo: "#",
   })),
-  experience: [1, 2].map((n) => ({
-    role: "Role Title",
-    company: "Company Name",
-    dates: n === 1 ? "2024 — Present" : "2022 — 2024",
-    bullets: [
-      "Placeholder bullet describing an impact-focused accomplishment.",
-      "Placeholder bullet describing another accomplishment.",
-    ],
-  })),
+  experience: [
+    {
+      role: "Masters of Computing",
+      company: "National University of Singapore",
+      dates: "Aug 2025 — Present",
+      bullets: ["Focus on agentic AI and building cost-effective, production-ready systems on the cloud.", "CAP 4.92/5 (in progress)."],
+    },
+    {
+      role: "AI Safety Trainee",
+      company: "Singapore AI Safety Hub",
+      dates: "Jun 2025",
+      bullets: [
+        "Selected for the Research Engineering Camp for Alignment Practitioners, covering mechanistic interpretability, RL and evals.",
+        "Designed an eval framework to test how different LLMs respond under authoritative pressure.",
+      ],
+    },
+    {
+      role: "ML Specialist, Trust & Safety",
+      company: "TikTok",
+      dates: "Feb 2021 — Jun 2024",
+      bullets: [
+        "Built an LLM-assisted pipeline to generate SFT data for content moderation, cutting labelling costs by over 80%.",
+        "Cut compute costs by pruning 20% of weak risk predictors from a 1,000-feature ensemble.",
+        "Led a 3-person audio team; expanded ASR and language-ID coverage to 90% of languages.",
+      ],
+    },
+  ],
+  earlier: "Earlier: Technical Engineer at ExxonMobil Chemicals, analytics at SAS, and a BEng in Chemical Engineering (Honours Highest Distinction) from NUS.",
   // level: "strong" | "comfortable" | "learning" (learning gets a dashed outline). icon = simple-icons slug.
   skills: [
     { name: "Python", icon: "python", level: "strong" },

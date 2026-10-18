@@ -48,7 +48,7 @@ const num = (id: string) => String(sections.indexOf(id) + 1).padStart(2, "0");
               <div class="t"><h3>{e.role} · {e.company}</h3>{e.bullets.map((b) => <p>{b}</p>)}</div>
             </li>
           ))}
-        </ol></div>
+        </ol><p class="mono earlier" data-reveal>{c.earlier}</p></div>
       </div>
     </section>
 
