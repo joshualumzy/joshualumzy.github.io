@@ -78,7 +78,7 @@ export const content = {
     },
   ],
   earlier: "Earlier: Technical Engineer at ExxonMobil Chemicals.",
-  // icon = simple-icons slug; omit for a text-only chip (AWS has no simple-icons entry).
+  // icon = simple-icons slug, or a key in icons.ts for logos simple-icons lacks (AWS).
   skills: [
     { name: "Python", icon: "python" },
     { name: "SQL", icon: "postgresql" },
@@ -88,7 +88,7 @@ export const content = {
     { name: "FastAPI", icon: "fastapi" },
     { name: "Docker", icon: "docker" },
     { name: "Git", icon: "git" },
-    { name: "AWS", icon: "" },
+    { name: "AWS", icon: "aws" },
     { name: "Terraform", icon: "terraform" },
   ] as { name: string; icon: string }[],
   contact: {

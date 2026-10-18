@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import * as simpleIcons from "simple-icons";
 import { content as c } from "../data/content";
+import { customIcons } from "../data/icons";
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const href = (h: string) => (h.startsWith("/") ? base + h : h);
 const slug = (s: string) => s.toLowerCase();
@@ -86,10 +87,12 @@ const num = (id: string) => String(sections.indexOf(id) + 1).padStart(2, "0");
             <ul class="track" aria-label={r === 0 ? "Skills" : undefined}>
               {[0, 1, 2, 3, 4, 5, 6, 7].flatMap((copy) => row.map((s) => {
                 const ic = iconFor(s.icon);
+                const cu = customIcons[s.icon];
                 return (
-                  <li class="chip" style={ic ? `--brand:#${ic.hex}` : ""} aria-hidden={copy ? "true" : undefined}>
+                  <li class="chip" aria-hidden={copy ? "true" : undefined}>
                     {ic && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={ic.path} /></svg>}
-                    {s.name}
+                    {cu && <svg class="wide" viewBox={cu.viewBox} role="img" aria-label={s.name}>{cu.paths.map((d) => <path d={d} />)}</svg>}
+                    {!cu && s.name}
                   </li>
                 );
               }))}
