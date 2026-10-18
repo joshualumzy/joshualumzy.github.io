@@ -20,7 +20,7 @@ export const content = {
       title: "Kaki.ai",
       outcome: "An operating agent for small teams that answers from company records, cites its sources, and leaves every action for a person to approve.",
       description:
-        "Small teams spend their time rebuilding context scattered across chat, tickets and meetings. Kaki searches before it answers, cites the records it read, and says when the evidence isn't there. It turns meeting decisions into drafts and flags hiring gaps, but a person approves the exact payload before anything is sent. Built with a team for the AWS AI Agent Global Hackathon.",
+        "Small teams spend their time rebuilding context scattered across chat, tickets and meetings. Kaki searches before it answers, cites the records it read, and says when the evidence isn't there. It turns meeting decisions into drafts and flags hiring gaps, but a person approves the exact payload before anything is sent. A team project, started for the AWS AI Agent Global Hackathon and still in progress.",
       tags: ["TypeScript", "PostgreSQL", "pgvector", "AWS", "Agents"],
       demo: "https://kakiai.me",
       repo: "https://github.com/joshualumzy/personal_agent_long_context",
@@ -29,7 +29,7 @@ export const content = {
       title: "NeuroLens",
       outcome: "A tool that predicts which moments of a video engage the brain most, for neuromarketers.",
       description:
-        "NeuroLens runs Meta's TRIBE v2 brain-encoding model on a video and predicts neural activity second by second. It shows which moments are most engaging, and whether faces, scenes or audio are driving it. A team project: we are deploying the model to the cloud and building the tool around it. In progress.",
+        "NeuroLens runs Meta's TRIBE v2 brain-encoding model on a video and predicts neural activity second by second. It shows which moments are most engaging, and whether faces, scenes or audio are driving it. A team project, still in progress: the model is being deployed to the cloud, with a tool built around it.",
       tags: ["Python", "Flask", "PyTorch", "TRIBE v2", "Cloud"],
       demo: "",
       repo: "https://github.com/kelvinlowhm86/neurolens",
@@ -38,7 +38,7 @@ export const content = {
       title: "Leetotter",
       outcome: "A Chrome side-panel tutor that remembers how you practise LeetCode and decides what to solve next.",
       description:
-        "Practising on NeetCode with an AI sidebar works, but the AI forgets what it taught you and nothing schedules revisits. Leetotter watches a session, nudges only when you're stuck, grades each attempt, and plans the next problem with spaced repetition (FSRS). A local Python companion runs the agents and stores everything in SQLite; the extension only reads the page and shows the UI. I simulated the plan before building it, which showed that supply of unseen problems, not retries, is the bottleneck.",
+        "Practising on NeetCode with an AI sidebar works, but the AI forgets what it taught you and nothing schedules revisits. Leetotter watches a session, nudges only when you're stuck, grades each attempt, and plans the next problem with spaced repetition (FSRS). A local Python companion runs the agents and stores everything in SQLite; the extension only reads the page and shows the UI. The plan was simulated before building, which showed that the supply of unseen problems, not retries, is the bottleneck. A solo project.",
       tags: ["Python", "TypeScript", "Chrome MV3", "SQLite", "FSRS"],
       demo: "",
       repo: "https://github.com/joshualumzy/leetotter",
@@ -47,7 +47,7 @@ export const content = {
       title: "Workflow generator",
       outcome: "A fine-tuned 3B model that turns a plain-English request into a valid, runnable workflow, with a browser editor to inspect and run it.",
       description:
-        "Describe a workflow in words and the system generates workflow JSON, which you can edit in the browser, validate and run locally. I fine-tuned a Qwen2.5-Coder 3B model on about 6,900 examples and constrained its decoding to the workflow grammar. The best checkpoint passed the validator on 96.7% of a 150-prompt test set. A course project (CS5462).",
+        "Describe a workflow in words and the system generates workflow JSON, which you can edit in the browser, validate and run locally. A Qwen2.5-Coder 3B model is fine-tuned on about 6,900 examples, with decoding constrained to the workflow grammar. The best checkpoint passed the validator on 96.7% of a 150-prompt test set. A team course project (CS5462), working and being improved.",
       tags: ["Python", "FastAPI", "QLoRA", "XGrammar", "Ray"],
       demo: "",
       repo: "https://github.com/joshualumzy/CS5462_PROJ2",
