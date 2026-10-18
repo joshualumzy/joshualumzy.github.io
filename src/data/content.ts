@@ -33,11 +33,23 @@ export const content = {
       "Placeholder bullet describing another accomplishment.",
     ],
   })),
-  skills: {
-    "Strong with": ["Python", "PyTorch", "SQL", "Git"],
-    "Comfortable with": ["Docker", "FastAPI", "TypeScript", "AWS"],
-    Learning: ["Rust", "MLOps", "LLM Evaluation"],
-  } as Record<string, string[]>,
+  // level: "strong" | "comfortable" | "learning" (learning gets a dashed outline). icon = simple-icons slug.
+  skills: [
+    { name: "Python", icon: "python", level: "strong" },
+    { name: "PyTorch", icon: "pytorch", level: "strong" },
+    { name: "SQL", icon: "postgresql", level: "strong" },
+    { name: "Git", icon: "git", level: "strong" },
+    { name: "pandas", icon: "pandas", level: "strong" },
+    { name: "scikit-learn", icon: "scikitlearn", level: "strong" },
+    { name: "Docker", icon: "docker", level: "comfortable" },
+    { name: "FastAPI", icon: "fastapi", level: "comfortable" },
+    { name: "TypeScript", icon: "typescript", level: "comfortable" },
+    { name: "Hugging Face", icon: "huggingface", level: "comfortable" },
+    { name: "Linux", icon: "linux", level: "comfortable" },
+    { name: "Rust", icon: "rust", level: "learning" },
+    { name: "Kubernetes", icon: "kubernetes", level: "learning" },
+    { name: "MLflow", icon: "mlflow", level: "learning" },
+  ] as { name: string; icon: string; level: "strong" | "comfortable" | "learning" }[],
   contact: {
     line: "Placeholder: I'm open to junior roles — say hello.",
     email: "you@example.com",
@@ -46,5 +58,5 @@ export const content = {
       { label: "LinkedIn", href: "https://linkedin.com/" },
     ],
   },
-  nav: ["Projects", "Experience", "Skills", "Contact"],
+  nav: ["Experience", "Projects", "Skills", "Contact"],
 };

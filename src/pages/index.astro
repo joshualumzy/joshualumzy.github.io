@@ -1,12 +1,18 @@
 ---
 import Base from "../layouts/Base.astro";
+import * as simpleIcons from "simple-icons";
 import { content as c } from "../data/content";
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const href = (h: string) => (h.startsWith("/") ? base + h : h);
 const slug = (s: string) => s.toLowerCase();
+const icons = Object.values(simpleIcons).filter((i: any) => i?.slug) as any[];
+const iconFor = (s: string) => icons.find((i) => i.slug === s);
+const rows = [c.skills.filter((_, i) => i % 2 === 0), c.skills.filter((_, i) => i % 2 === 1)];
+const sections = c.nav.map(slug);
+const num = (id: string) => String(sections.indexOf(id) + 1).padStart(2, "0");
 ---
 <Base title={c.site.title} description={c.site.description}>
-  <div class="bg" aria-hidden="true"><div class="blob a"></div><div class="blob b"></div></div>
+  <canvas id="bg" aria-hidden="true"></canvas>
 
   <nav class="top" aria-label="Primary">
     <div class="wrap">
@@ -20,7 +26,7 @@ const slug = (s: string) => s.toLowerCase();
   <main id="main">
     <section class="hero" id="top">
       <div class="wrap">
-        <p class="label" data-hero>{c.hero.eyebrow}</p>
+        <p class="mono status" data-hero>{c.hero.eyebrow}</p>
         <h1 data-hero>{c.hero.name}</h1>
         <p class="tag" data-hero>{c.hero.tagline}</p>
         <div class="btns" data-hero>
@@ -32,10 +38,24 @@ const slug = (s: string) => s.toLowerCase();
       </div>
     </section>
 
+    <section id="experience" data-section>
+      <div class="wrap">
+        <div class="sh" data-reveal><span class="mono">{num("experience")}</span><h2>Experience</h2></div>
+        <ol class="tl">
+          {c.experience.map((e) => (
+            <li data-reveal>
+              <h3>{e.role} · {e.company}</h3>
+              <p class="mono meta">{e.dates}</p>
+              {e.bullets.map((b) => <p>{b}</p>)}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
     <section id="projects" data-section>
       <div class="wrap">
-        <p class="label" data-reveal>Featured work</p>
-        <h2 data-reveal>Projects</h2>
+        <div class="sh" data-reveal><span class="mono">{num("projects")}</span><h2>Projects</h2></div>
         <div class="grid">
           {c.projects.map((p) => (
             <div class="slot" data-reveal>
@@ -57,41 +77,33 @@ const slug = (s: string) => s.toLowerCase();
       </div>
     </section>
 
-    <section id="experience" data-section>
-      <div class="wrap">
-        <p class="label" data-reveal>Where I've worked</p>
-        <h2 data-reveal>Experience</h2>
-        <ol class="tl">
-          {c.experience.map((e) => (
-            <li data-reveal>
-              <h3>{e.role} · {e.company}</h3>
-              <p class="meta">{e.dates}</p>
-              {e.bullets.map((b) => <p>{b}</p>)}
-            </li>
-          ))}
-        </ol>
-      </div>
-    </section>
-
     <section id="skills" data-section>
       <div class="wrap">
-        <p class="label" data-reveal>Toolbox</p>
-        <h2 data-reveal>Skills</h2>
-        <div class="sk">
-          {Object.entries(c.skills).map(([group, items]) => (
-            <div data-reveal>
-              <h3>{group}</h3>
-              <ul class="tags">{items.map((s) => <li class="tag-chip">{s}</li>)}</ul>
-            </div>
-          ))}
-        </div>
+        <div class="sh" data-reveal><span class="mono">{num("skills")}</span><h2>Skills</h2></div>
+      </div>
+      <div data-reveal>
+        {rows.map((row, r) => (
+          <div class:list={["marquee", { rev: r === 1 }]}>
+            <ul class="track" aria-label={r === 0 ? "Skills" : undefined}>
+              {[0, 1].flatMap((copy) => row.map((s) => {
+                const ic = iconFor(s.icon);
+                return (
+                  <li class={`chip ${s.level}`} style={ic ? `--brand:#${ic.hex}` : ""} aria-hidden={copy ? "true" : undefined}>
+                    {ic && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={ic.path} /></svg>}
+                    {s.name}
+                  </li>
+                );
+              }))}
+            </ul>
+          </div>
+        ))}
+        <div class="wrap"><p class="mono legend">Solid outline: strong / comfortable · Dashed: learning</p></div>
       </div>
     </section>
 
     <section id="contact" class="contact" data-section>
       <div class="wrap">
-        <p class="label" data-reveal>Get in touch</p>
-        <h2 data-reveal>Contact</h2>
+        <div class="sh" data-reveal><span class="mono">{num("contact")}</span><h2>Contact</h2></div>
         <p class="line" data-reveal>{c.contact.line}</p>
         <a class="big ulink" data-reveal href={`mailto:${c.contact.email}`}>{c.contact.email}</a>
         <p class="links" data-reveal style="margin-top:var(--s-3)">
@@ -106,5 +118,6 @@ const slug = (s: string) => s.toLowerCase();
 
   <script>
     import "../scripts/motion";
+    import "../scripts/bg";
   </script>
 </Base>

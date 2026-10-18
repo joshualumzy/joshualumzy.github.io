@@ -1,18 +1,19 @@
 /* All design tokens live here. Restyle the whole site from this file. */
 :root {
-  --bg: #faf7f2;
+  --bg: #ffffff;
   --surface: #ffffff;
-  --text: #1c1917;
-  --muted: #6b645c;
-  --line: #e7e1d8;
-  --accent: #c2410c;
-  --accent-soft: #fbe3d6;
+  --text: #0a0a0a;
+  --muted: #6a6a6a;
+  --line: #e6e6e6;
+  --accent: #2d4bff;
+  --accent-soft: #eef1ff;
 
-  --font-serif: "Fraunces Variable", Georgia, serif;
-  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --font-display: "Geist Variable", system-ui, sans-serif;
+  --font-sans: "Geist Variable", system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, monospace;
 
   --s-1: 0.5rem; --s-2: 1rem; --s-3: 1.5rem; --s-4: 2.5rem; --s-5: 4rem; --s-6: 7rem;
-  --radius: 18px;
+  --radius: 10px;
   --gutter: clamp(1.25rem, 5vw, 3rem);
   --max: 68rem;
 
