@@ -3,7 +3,7 @@ export const content = {
   site: {
     title: "Josh — AI Engineer",
     legalName: "Josh",
-    description: "Josh: ex-TikTok ML specialist and NUS Masters of Computing student building cost-effective, production-ready AI agents on the cloud.",
+    description: "Josh, AI engineer. Ex-TikTok ML specialist, now at NUS building AI agents and cloud systems around human-agent collaboration.",
   },
   hero: {
     name: "Josh",
