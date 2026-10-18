@@ -1,0 +1,22 @@
+/* All design tokens live here. Restyle the whole site from this file. */
+:root {
+  --bg: #faf7f2;
+  --surface: #ffffff;
+  --text: #1c1917;
+  --muted: #6b645c;
+  --line: #e7e1d8;
+  --accent: #c2410c;
+  --accent-soft: #fbe3d6;
+
+  --font-serif: "Fraunces Variable", Georgia, serif;
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+
+  --s-1: 0.5rem; --s-2: 1rem; --s-3: 1.5rem; --s-4: 2.5rem; --s-5: 4rem; --s-6: 7rem;
+  --radius: 18px;
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+  --max: 68rem;
+
+  /* One easing curve, three durations — used by CSS and (mirrored) by motion.ts */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --d-fast: 0.2s; --d-med: 0.5s; --d-slow: 0.9s;
+}
