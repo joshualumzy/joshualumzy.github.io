@@ -1,0 +1,73 @@
+// Interactive dot-grid background. Dots swell, drift away and turn accent near the cursor; click sends a ripple.
+// Only animates while there's something to animate, so it idles at ~0% CPU.
+const canvas = document.getElementById("bg") as HTMLCanvasElement;
+const ctx = canvas.getContext("2d")!;
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const GAP = 30, REACH = 150, PUSH = 14;
+const css = getComputedStyle(document.documentElement);
+const accent = css.getPropertyValue("--accent").trim() || "#d4ff3a";
+const ink = css.getPropertyValue("--text").trim() || "#0a0a0a";
+const base = "#d4d4d4";
+
+let w = 0, h = 0, dpr = 1;
+const mouse = { x: -9999, y: -9999, sx: -9999, sy: -9999 };
+const ripples: { x: number; y: number; t: number }[] = [];
+let raf = 0, idleUntil = 0;
+
+function resize() {
+  dpr = Math.min(devicePixelRatio || 1, 2);
+  w = innerWidth; h = innerHeight;
+  canvas.width = w * dpr; canvas.height = h * dpr;
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  draw(performance.now());
+}
+
+function draw(now: number) {
+  ctx.clearRect(0, 0, w, h);
+  const cols = Math.ceil(w / GAP) + 1, rows = Math.ceil(h / GAP) + 1;
+  for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
+    const ox = i * GAP, oy = j * GAP;
+    let dx = ox - mouse.sx, dy = oy - mouse.sy;
+    const d = Math.hypot(dx, dy);
+    const k = d < REACH ? (1 - d / REACH) ** 2 : 0;
+    let x = ox, y = oy, rk = 0;
+    if (k) { x += (dx / (d || 1)) * k * PUSH; y += (dy / (d || 1)) * k * PUSH; }
+    for (const r of ripples) {
+      const age = (now - r.t) / 900, rd = Math.hypot(ox - r.x, oy - r.y), ring = Math.abs(rd - age * 420);
+      if (ring < 40 && age < 1) rk = Math.max(rk, (1 - ring / 40) * (1 - age));
+    }
+    ctx.beginPath();
+    if (rk > 0.05) {
+      // click ripple: lime marker dots with an ink outline so they read on white
+      ctx.globalAlpha = 1; ctx.fillStyle = accent; ctx.strokeStyle = ink; ctx.lineWidth = 1;
+      ctx.arc(x, y, 1.6 + rk * 3.4, 0, 6.2832); ctx.fill(); ctx.stroke();
+    } else {
+      ctx.fillStyle = k > 0.02 ? ink : base;
+      ctx.globalAlpha = k > 0.02 ? 0.3 + 0.7 * Math.min(k * 1.6, 1) : 1;
+      ctx.arc(x, y, 1.1 + k * 2.8, 0, 6.2832); ctx.fill();
+    }
+  }
+  ctx.globalAlpha = 1;
+}
+
+function tick(now: number) {
+  mouse.sx += (mouse.x - mouse.sx) * 0.15;
+  mouse.sy += (mouse.y - mouse.sy) * 0.15;
+  while (ripples.length && now - ripples[0].t > 900) ripples.shift();
+  draw(now);
+  raf = now < idleUntil || ripples.length ? requestAnimationFrame(tick) : 0;
+}
+const wake = () => { idleUntil = performance.now() + 1200; if (!raf) raf = requestAnimationFrame(tick); };
+
+addEventListener("resize", resize);
+draw(performance.now());
+resize();
+if (!reduced) {
+  addEventListener("pointermove", (e) => {
+    if (mouse.sx < -999) { mouse.sx = e.clientX; mouse.sy = e.clientY; }
+    mouse.x = e.clientX; mouse.y = e.clientY; wake();
+  }, { passive: true });
+  addEventListener("pointerdown", (e) => { ripples.push({ x: e.clientX, y: e.clientY, t: performance.now() }); wake(); }, { passive: true });
+  document.addEventListener("pointerleave", () => { mouse.x = mouse.y = -9999; wake(); });
+}
