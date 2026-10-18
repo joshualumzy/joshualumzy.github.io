@@ -6,7 +6,8 @@ const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const GAP = 30, REACH = 150, PUSH = 14;
 const css = getComputedStyle(document.documentElement);
-const accent = css.getPropertyValue("--accent").trim() || "#2d4bff";
+const accent = css.getPropertyValue("--accent").trim() || "#d4ff3a";
+const ink = css.getPropertyValue("--text").trim() || "#0a0a0a";
 const base = "#d4d4d4";
 
 let w = 0, h = 0, dpr = 1;
@@ -29,18 +30,23 @@ function draw(now: number) {
     const ox = i * GAP, oy = j * GAP;
     let dx = ox - mouse.sx, dy = oy - mouse.sy;
     const d = Math.hypot(dx, dy);
-    let k = d < REACH ? (1 - d / REACH) ** 2 : 0;
-    let x = ox, y = oy;
+    const k = d < REACH ? (1 - d / REACH) ** 2 : 0;
+    let x = ox, y = oy, rk = 0;
     if (k) { x += (dx / (d || 1)) * k * PUSH; y += (dy / (d || 1)) * k * PUSH; }
     for (const r of ripples) {
       const age = (now - r.t) / 900, rd = Math.hypot(ox - r.x, oy - r.y), ring = Math.abs(rd - age * 420);
-      if (ring < 40 && age < 1) k = Math.max(k, (1 - ring / 40) * (1 - age));
+      if (ring < 40 && age < 1) rk = Math.max(rk, (1 - ring / 40) * (1 - age));
     }
-    ctx.fillStyle = k > 0.02 ? accent : base;
-    ctx.globalAlpha = k > 0.02 ? 0.35 + 0.65 * Math.min(k * 1.6, 1) : 1;
     ctx.beginPath();
-    ctx.arc(x, y, 1.1 + k * 2.6, 0, 6.2832);
-    ctx.fill();
+    if (rk > 0.05) {
+      // click ripple: lime marker dots with an ink outline so they read on white
+      ctx.globalAlpha = 1; ctx.fillStyle = accent; ctx.strokeStyle = ink; ctx.lineWidth = 1;
+      ctx.arc(x, y, 1.6 + rk * 3.4, 0, 6.2832); ctx.fill(); ctx.stroke();
+    } else {
+      ctx.fillStyle = k > 0.02 ? ink : base;
+      ctx.globalAlpha = k > 0.02 ? 0.3 + 0.7 * Math.min(k * 1.6, 1) : 1;
+      ctx.arc(x, y, 1.1 + k * 2.8, 0, 6.2832); ctx.fill();
+    }
   }
   ctx.globalAlpha = 1;
 }

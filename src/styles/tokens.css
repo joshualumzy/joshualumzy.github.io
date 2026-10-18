@@ -5,15 +5,16 @@
   --text: #0a0a0a;
   --muted: #6a6a6a;
   --line: #e6e6e6;
-  --accent: #2d4bff;
-  --accent-soft: #eef1ff;
+  --accent: #d4ff3a; /* highlighter lime: use as a fill, never as text on white */
+  --accent-soft: #f4ffc9;
 
-  --font-display: "Geist Variable", system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque Variable", system-ui, sans-serif;
   --font-sans: "Geist Variable", system-ui, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, monospace;
 
   --s-1: 0.5rem; --s-2: 1rem; --s-3: 1.5rem; --s-4: 2.5rem; --s-5: 4rem; --s-6: 7rem;
-  --radius: 10px;
+  --radius: 8px;
+  --shadow: 4px 4px 0 var(--text);
   --gutter: clamp(1.25rem, 5vw, 3rem);
   --max: 68rem;
 
