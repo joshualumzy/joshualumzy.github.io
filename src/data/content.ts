@@ -45,9 +45,9 @@ export const content = {
       company: "TikTok",
       dates: "Feb 2021 — Jun 2024",
       bullets: [
-        "Built an LLM-assisted pipeline to generate SFT data for content moderation, cutting labelling costs by over 80%.",
+        "Led a 3-person audio team, overseeing ASR and language-ID modules and expanding language coverage to 90%.",
         "Cut compute costs by pruning 20% of weak risk predictors from a 1,000-feature ensemble.",
-        "Led a 3-person audio team; expanded ASR and language-ID coverage to 90% of languages.",
+        "Built an LLM-assisted pipeline to generate SFT data for content moderation, cutting labelling costs by over 80%.",
       ],
     },
   ],
