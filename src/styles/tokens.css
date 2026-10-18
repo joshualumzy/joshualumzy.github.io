@@ -4,7 +4,7 @@
   --surface: #ffffff;
   --text: #0a0a0a;
   --muted: #6a6a6a;
-  --line: #e6e6e6;
+  --line: #e4e4e4;
   --accent: #d4ff3a; /* highlighter lime: use as a fill, never as text on white */
   --accent-soft: #f4ffc9;
 
@@ -14,7 +14,7 @@
 
   --s-1: 0.5rem; --s-2: 1rem; --s-3: 1.5rem; --s-4: 2.5rem; --s-5: 4rem; --s-6: 7rem;
   --radius: 8px;
-  --shadow: 4px 4px 0 var(--text);
+  --shadow: none;
   --gutter: clamp(1.25rem, 5vw, 3rem);
   --max: 68rem;
 
