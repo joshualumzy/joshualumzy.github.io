@@ -29,7 +29,7 @@ export const content = {
       role: "Masters of Computing",
       company: "National University of Singapore",
       dates: "Aug 2025 — Present",
-      bullets: ["Focus on agentic AI and building cost-effective, production-ready systems on the cloud.", "CAP 4.92/5 (in progress)."],
+      bullets: ["Electives in ML Systems, Cloud and Deep Learning.", "CAP 4.92/5 (in progress)."],
     },
     {
       role: "AI Safety Trainee",
