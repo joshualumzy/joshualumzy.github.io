@@ -84,10 +84,10 @@ const num = (id: string) => String(sections.indexOf(id) + 1).padStart(2, "0");
         {rows.map((row, r) => (
           <div class:list={["marquee", { rev: r === 1 }]}>
             <ul class="track" aria-label={r === 0 ? "Skills" : undefined}>
-              {[0, 1].flatMap((copy) => row.map((s) => {
+              {[0, 1, 2, 3, 4, 5, 6, 7].flatMap((copy) => row.map((s) => {
                 const ic = iconFor(s.icon);
                 return (
-                  <li class={`chip ${s.level}`} style={ic ? `--brand:#${ic.hex}` : ""} aria-hidden={copy ? "true" : undefined}>
+                  <li class="chip" style={ic ? `--brand:#${ic.hex}` : ""} aria-hidden={copy ? "true" : undefined}>
                     {ic && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={ic.path} /></svg>}
                     {s.name}
                   </li>
@@ -96,7 +96,6 @@ const num = (id: string) => String(sections.indexOf(id) + 1).padStart(2, "0");
             </ul>
           </div>
         ))}
-        <div class="wrap"><p class="mono legend">Solid outline: strong / comfortable · Dashed: learning</p></div>
       </div>
     </section>
 

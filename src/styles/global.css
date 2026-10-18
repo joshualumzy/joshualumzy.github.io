@@ -92,8 +92,6 @@ nav.top ul{display:flex;gap:clamp(.5rem,2vw,1.25rem)}
 .chip{display:inline-flex;align-items:center;gap:.7rem;padding:.75rem 1.2rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg);white-space:nowrap;font-weight:500;transition:background var(--d-fast),border-color var(--d-fast),transform var(--d-med) var(--ease)}
 .chip svg{width:1.5rem;height:1.5rem;fill:currentColor}
 .chip:hover{background:var(--accent);border-color:var(--text);transform:translateY(-2px)}
-.chip.learning{border-style:dashed}
-.legend{margin-top:var(--s-2)}
 
 /* contact + footer */
 .contact .big{font-family:var(--font-display);font-weight:800;letter-spacing:-.045em;font-size:clamp(1.2rem,5vw,2.75rem);white-space:nowrap;line-height:1;display:inline-block;padding:0 .1em;margin:0 -.1em;background:linear-gradient(var(--accent),var(--accent)) 0 88%/100% .22em no-repeat;transition:background-size var(--d-med) var(--ease)}
