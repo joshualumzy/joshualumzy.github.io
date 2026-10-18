@@ -1,18 +1,18 @@
 // Replace every placeholder here — components never need editing for content.
 export const content = {
   site: {
-    title: "Your Name — AI Engineer",
-    description: "Placeholder description: junior AI engineer open to first roles.",
+    title: "Josh Lum — AI Engineer",
+    legalName: "Joshua Lum",
+    description: "Josh Lum: ex-TikTok ML specialist and NUS Masters of Computing student building practical AI and LLM systems.",
   },
   hero: {
-    name: "Your Name",
-    eyebrow: "AI Engineer · MSc Graduate",
-    tagline: "I build [what you do]. Looking for [role type] at [kind of team].",
+    name: "Josh",
+    eyebrow: "MComp @ NUS · ex-TikTok",
+    tagline: "I turn real pain points into software that does things better, cheaper or in a way that wasn't possible before. 3+ years shipping ML at TikTok, now going deeper on LLMs and agentic AI.",
     links: [
       { label: "Resume", href: "/resume.pdf", primary: true },
-      { label: "GitHub", href: "https://github.com/" },
-      { label: "LinkedIn", href: "https://linkedin.com/" },
-      { label: "Email", href: "mailto:you@example.com" },
+      { label: "GitHub", href: "https://github.com/joshualumzy" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/joshualumzy" },
     ],
   },
   projects: [1, 2, 3].map((n) => ({
@@ -51,11 +51,11 @@ export const content = {
     { name: "MLflow", icon: "mlflow", level: "learning" },
   ] as { name: string; icon: string; level: "strong" | "comfortable" | "learning" }[],
   contact: {
-    line: "Placeholder: I'm open to junior roles — say hello.",
-    email: "you@example.com",
+    line: "Open to roles in AI and software engineering. Say hello.",
+    email: "joshualumzy@outlook.com",
     links: [
-      { label: "GitHub", href: "https://github.com/" },
-      { label: "LinkedIn", href: "https://linkedin.com/" },
+      { label: "GitHub", href: "https://github.com/joshualumzy" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/joshualumzy" },
     ],
   },
   nav: ["Experience", "Projects", "Skills", "Contact"],
