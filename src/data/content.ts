@@ -40,7 +40,7 @@ export const content = {
       role: "Masters of Computing",
       company: "National University of Singapore",
       dates: "Aug 2025 — Present",
-      bullets: ["Electives in ML Systems, Cloud and Deep Learning."],
+      bullets: ["Focusing on ML systems, cloud and deep learning."],
     },
     {
       role: "AI Safety Trainee",
@@ -59,7 +59,7 @@ export const content = {
       ],
     },
   ],
-  earlier: "Earlier: Technical Engineer at ExxonMobil Chemicals, analytics at SAS, and a BEng in Chemical Engineering (Honours Highest Distinction) from NUS.",
+  earlier: "Earlier: Technical Engineer at ExxonMobil Chemicals.",
   // level: "strong" | "comfortable" | "learning" (learning gets a dashed outline). icon = simple-icons slug.
   skills: [
     { name: "Python", icon: "python", level: "strong" },
