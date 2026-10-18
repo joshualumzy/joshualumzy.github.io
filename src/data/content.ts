@@ -8,7 +8,7 @@ export const content = {
   hero: {
     name: "Josh",
     eyebrow: "MComp @ NUS · ex-TikTok",
-    tagline: "I turn real pain points into software that does things better, cheaper or in a way that wasn't possible before. 3+ years shipping ML at TikTok, now going deeper on cloud and agentic AI.",
+    tagline: "I build with AI as a collaborator, on my own pain points, other people's, and the occasional thing that's just cool. 3+ years shipping ML at TikTok, now into cloud and agentic AI.",
     links: [
       { label: "Resume", href: "/resume.pdf", primary: true },
       { label: "GitHub", href: "https://github.com/joshualumzy" },
