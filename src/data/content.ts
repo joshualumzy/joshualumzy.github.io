@@ -45,9 +45,7 @@ export const content = {
       company: "TikTok",
       dates: "Feb 2021 — Jun 2024",
       bullets: [
-        "Led a 3-person audio team, overseeing ASR and language-ID modules and expanding language coverage to 90%.",
-        "Cut compute costs by pruning 20% of weak risk predictors from a 1,000-feature ensemble.",
-        "Built an LLM-assisted pipeline to generate SFT data for content moderation, cutting labelling costs by over 80%.",
+        "Built Trust & Safety solutions for short video and live, across a complex moderation landscape of shifting policies, operations and user behaviour.",
       ],
     },
   ],
