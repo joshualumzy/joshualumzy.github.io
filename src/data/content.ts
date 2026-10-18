@@ -8,7 +8,7 @@ export const content = {
   hero: {
     name: "Josh",
     eyebrow: "MComp @ NUS · ex-TikTok",
-    tagline: "I build AI agents that are cheap and reliable enough to run in production, on the cloud. 3+ years shipping ML at TikTok, now deepening it with a Masters at NUS.",
+    tagline: "I turn real pain points into software that does things better, cheaper or in a way that wasn't possible before. 3+ years shipping ML at TikTok, now going deeper on cloud and agentic AI.",
     links: [
       { label: "Resume", href: "/resume.pdf", primary: true },
       { label: "GitHub", href: "https://github.com/joshualumzy" },
