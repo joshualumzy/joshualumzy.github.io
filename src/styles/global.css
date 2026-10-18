@@ -26,7 +26,7 @@ h2{font-size:clamp(2.5rem,6vw,4.25rem)}
 nav.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 nav.top .wrap{display:flex;justify-content:space-between;align-items:center;height:3.5rem;gap:var(--s-2)}
 .logo{font-family:var(--font-display);font-weight:800;font-size:1.15rem;text-decoration:none;letter-spacing:-.03em;white-space:nowrap}
-.logo::after{content:"";display:inline-block;width:.5rem;height:.5rem;margin-left:.2rem;background:var(--accent);border:1px solid var(--line);border-radius:50%}
+.logo::after{content:"";animation:online 2.4s ease-in-out infinite;display:inline-block;width:.5rem;height:.5rem;margin-left:.2rem;background:var(--accent);border:1px solid var(--line);border-radius:50%}
 nav.top ul{display:flex;gap:clamp(.5rem,2vw,1.25rem)}
 
 /* highlighter-sweep links */
@@ -96,7 +96,7 @@ nav.top ul{display:flex;gap:clamp(.5rem,2vw,1.25rem)}
 .legend{margin-top:var(--s-2)}
 
 /* contact + footer */
-.contact .big{font-family:var(--font-display);font-weight:800;letter-spacing:-.045em;font-size:clamp(2rem,7.5vw,5.5rem);word-break:break-word;line-height:1;display:inline-block;padding:0 .1em;margin:0 -.1em;background:linear-gradient(var(--accent),var(--accent)) 0 88%/100% .22em no-repeat;transition:background-size var(--d-med) var(--ease)}
+.contact .big{font-family:var(--font-display);font-weight:800;letter-spacing:-.045em;font-size:clamp(1.2rem,5vw,2.75rem);white-space:nowrap;line-height:1;display:inline-block;padding:0 .1em;margin:0 -.1em;background:linear-gradient(var(--accent),var(--accent)) 0 88%/100% .22em no-repeat;transition:background-size var(--d-med) var(--ease)}
 .contact .big:hover{background-size:100% 100%}
 .contact .line{margin:0 0 var(--s-3);max-width:32rem;font-size:1.15rem}
 .contact .links{margin-top:var(--s-3)}
@@ -112,3 +112,7 @@ footer{padding:var(--s-4) 0;font-size:.88rem;border-top:1px solid var(--line);ma
 .cursor.on{opacity:.55}
 .cursor.big{width:56px;height:56px;margin:-28px 0 0 -28px;background:color-mix(in srgb,var(--accent) 55%,transparent);border-color:transparent;opacity:1}
 .earlier{margin-top:var(--s-3);max-width:38rem;color:var(--muted)}
+
+/* "online" pulse on the logo dot */
+@keyframes online{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 70%,transparent);opacity:1}50%{box-shadow:0 0 0 6px transparent;opacity:.55}}
+@media(prefers-reduced-motion:reduce){.logo::after{animation:none}}

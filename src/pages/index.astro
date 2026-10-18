@@ -104,10 +104,7 @@ const num = (id: string) => String(sections.indexOf(id) + 1).padStart(2, "0");
       <div class="wrap sec">
         <div class="sh" data-reveal><span class="mono">{num("contact")}</span><h2>Contact</h2></div>
         <div class="body"><p class="line" data-reveal>{c.contact.line}</p>
-        <a class="big ulink" data-reveal href={`mailto:${c.contact.email}`}>{c.contact.email}</a>
-        <p class="links" data-reveal style="margin-top:var(--s-3)">
-          {c.contact.links.map((l) => <a class="ulink" href={l.href} target="_blank" rel="noopener">{l.label} ↗</a>)}
-        </p></div>
+        <a class="big ulink" data-reveal href={`mailto:${c.contact.email}`}>{c.contact.email}</a></div>
       </div>
     </section>
   </main>
