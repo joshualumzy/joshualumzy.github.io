@@ -66,8 +66,8 @@ const num = (id: string) => String(sections.indexOf(id) + 1).padStart(2, "0");
                 <p class="detail">{p.description}</p>
                 <ul class="tags">{p.tags.map((t) => <li class="tag-chip">{t}</li>)}</ul>
                 <div class="links">
-                  <a class="ulink" href={p.demo}>Live Demo ↗</a>
-                  <a class="ulink" href={p.repo}>Repo ↗</a>
+                  {p.demo && <a class="ulink" href={p.demo}>Live Demo ↗</a>}
+                  {p.repo && <a class="ulink" href={p.repo}>Repo ↗</a>}
                 </div>
               </article>
             </div>
