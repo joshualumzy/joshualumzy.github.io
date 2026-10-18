@@ -20,7 +20,7 @@ export const content = {
       title: "Kaki.ai",
       outcome: "An operating agent for small teams that answers from company records, cites its sources, and leaves every action for a person to approve.",
       description:
-        "Small teams spend their time rebuilding context scattered across chat, tickets and meetings. Kaki searches before it answers, cites the records it read, and says when the evidence isn't there. It turns meeting decisions into drafts and flags hiring gaps, but a person approves the exact payload before anything is sent. A team project, still in progress.",
+        "Small teams spend their time rebuilding context scattered across chat, tickets and meetings. Kaki searches before it answers, cites the records it read, and says when the evidence isn't there. It turns meeting decisions into drafts and flags hiring gaps, but a person approves the exact payload before anything is sent. A team project.",
       tags: ["TypeScript", "PostgreSQL", "pgvector", "AWS", "Agents"],
       demo: "https://kakiai.me",
       repo: "https://github.com/joshualumzy/personal_agent_long_context",
@@ -29,7 +29,7 @@ export const content = {
       title: "NeuroLens",
       outcome: "A tool that predicts which moments of a video engage the brain most, for neuromarketers.",
       description:
-        "NeuroLens runs Meta's TRIBE v2 brain-encoding model on a video and predicts neural activity second by second. It shows which moments are most engaging, and whether faces, scenes or audio are driving it. A team project, still in progress: the model is being deployed to the cloud, with a tool built around it.",
+        "NeuroLens runs Meta's TRIBE v2 brain-encoding model on a video and predicts neural activity second by second. It shows which moments are most engaging, and whether faces, scenes or audio are driving it. A team project: the model is being deployed to the cloud, with a tool built around it.",
       tags: ["Python", "Flask", "PyTorch", "TRIBE v2", "Cloud"],
       demo: "",
       repo: "https://github.com/kelvinlowhm86/neurolens",
@@ -47,7 +47,7 @@ export const content = {
       title: "Flowsmith",
       outcome: "A fine-tuned 3B model that turns a plain-English request into a valid, runnable workflow, with a browser editor to inspect and run it.",
       description:
-        "Describe a workflow in words and the system generates workflow JSON, which you can edit in the browser, validate and run locally. A Qwen2.5-Coder 3B model is fine-tuned on about 6,900 examples, with decoding constrained to the workflow grammar. The best checkpoint passed the validator on 96.7% of a 150-prompt test set. A team course project (CS5462), working and being improved.",
+        "Describe a workflow in words and the system generates workflow JSON, which you can edit in the browser, validate and run locally. A Qwen2.5-Coder 3B model is fine-tuned on about 6,900 examples, with decoding constrained to the workflow grammar. The best checkpoint passed the validator on 96.7% of a 150-prompt test set. A team course project (CS5462).",
       tags: ["Python", "FastAPI", "QLoRA", "XGrammar", "Ray"],
       demo: "",
       repo: "https://github.com/joshualumzy/CS5462_PROJ2",
