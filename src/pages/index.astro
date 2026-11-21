@@ -118,7 +118,6 @@ const num = (id: string) => String(sections.indexOf(id) + 1).padStart(2, "0");
         <div class="body"><p class="line" data-reveal>{c.contact.line}</p>
         <a class="big ulink" data-reveal href={`mailto:${c.contact.email}`}>{c.contact.email}</a>
         <div class="btns" data-reveal>
-          <a class="btn primary" href={`mailto:${c.contact.email}`}>Email me</a>
           <button class="btn" type="button" data-copy={c.contact.email}>Copy email</button>
         </div></div>
       </div>
