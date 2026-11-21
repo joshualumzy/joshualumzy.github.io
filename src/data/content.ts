@@ -7,7 +7,7 @@ export const content = {
   },
   hero: {
     name: "Josh",
-    eyebrow: "MComp @ NUS · ex-TikTok",
+    eyebrow: "Builder · MComp @ NUS · ex-TikTok",
     tagline: "I build things I wish existed. 3+ years shipping ML at TikTok, now into AI, cloud and human-agent collaboration.",
     links: [
       { label: "Resume", href: "/resume.pdf", primary: true },
@@ -24,6 +24,17 @@ export const content = {
       tags: ["Python", "Flask", "PyTorch", "TRIBE v2", "AWS"],
       demo: "https://joshualumzy.github.io/neurolens-samples/",
       repo: "https://github.com/kelvinlowhm86/neurolens",
+    },
+  ],
+  sideQuests: [
+    {
+      title: "Leetotter",
+      outcome: "A Chrome side-panel tutor that remembers how you practise LeetCode and decides what to solve next.",
+      description:
+        "Practising on NeetCode with an AI sidebar works, but the AI forgets what it taught you and nothing schedules revisits. Leetotter watches a session, nudges only when you're stuck, grades each attempt, and plans the next problem with spaced repetition (FSRS). A local Python companion runs the agents and stores everything in SQLite; the extension only reads the page and shows the UI. The plan was simulated before building, which showed that the supply of unseen problems, not retries, is the bottleneck.",
+      tags: ["Python", "TypeScript", "Chrome MV3", "SQLite", "FSRS"],
+      demo: "",
+      repo: "https://github.com/joshualumzy/leetotter",
     },
   ],
   experience: [

@@ -56,22 +56,29 @@ const num = (id: string) => String(sections.indexOf(id) + 1).padStart(2, "0");
     <section id="projects" data-section>
       <div class="wrap sec">
         <div class="sh" data-reveal><span class="mono">{num("projects")}</span><h2>Projects</h2></div>
-        <div class="body list">
-          {c.projects.map((p) => (
-            <div class="slot" data-reveal>
-              <article class="card" data-card>
-                <button class="close" type="button" aria-label="Close project">✕</button>
-                <div class="thumb" aria-hidden="true"></div>
-                <h3><button class="card-open" type="button" aria-haspopup="dialog">{p.title}</button></h3>
-                <p class="outcome">{p.outcome}</p>
-                <p class="detail">{p.description}</p>
-                <ul class="tags">{p.tags.map((t) => <li class="tag-chip">{t}</li>)}</ul>
-                <div class="links">
-                  {p.demo && <a class="ulink" href={p.demo}>Live Demo ↗</a>}
-                  {p.repo && <a class="ulink" href={p.repo}>Repo ↗</a>}
-                </div>
-              </article>
-            </div>
+        <div class="body">
+          {[{ label: "", items: c.projects }, { label: "Side quests", items: c.sideQuests }].map((g) => (
+            <>
+              {g.label && <p class="mono sub" data-reveal>{g.label}</p>}
+              <div class="list">
+                {g.items.map((p) => (
+              <div class="slot" data-reveal>
+                <article class="card" data-card>
+                  <button class="close" type="button" aria-label="Close project">✕</button>
+                  <div class="thumb" aria-hidden="true"></div>
+                  <h3><button class="card-open" type="button" aria-haspopup="dialog">{p.title}</button></h3>
+                  <p class="outcome">{p.outcome}</p>
+                  <p class="detail">{p.description}</p>
+                  <ul class="tags">{p.tags.map((t) => <li class="tag-chip">{t}</li>)}</ul>
+                  <div class="links">
+                    {p.demo && <a class="ulink" href={p.demo}>Live Demo ↗</a>}
+                    {p.repo && <a class="ulink" href={p.repo}>Repo ↗</a>}
+                  </div>
+                </article>
+              </div>
+                ))}
+              </div>
+            </>
           ))}
         </div>
       </div>
