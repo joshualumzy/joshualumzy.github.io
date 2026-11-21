@@ -26,7 +26,9 @@ const num = (id: string) => String(sections.indexOf(id) + 1).padStart(2, "0");
 
   <main id="main">
     <section class="hero" id="top">
-      <div class="wrap">
+      <div class="wrap hero-grid">
+        <div class="avatar" data-hero><img src={href("/avatar.jpg")} alt={c.hero.avatarAlt} width="720" height="720" fetchpriority="high" /></div>
+        <div class="hero-text">
         <p class="sticker" data-hero>{c.hero.eyebrow}</p>
         <h1 data-hero>{c.hero.name}</h1>
         <p class="tag" data-hero>{c.hero.tagline}</p>
@@ -36,12 +38,13 @@ const num = (id: string) => String(sections.indexOf(id) + 1).padStart(2, "0");
                target={l.href.startsWith("http") ? "_blank" : undefined} rel="noopener">{l.label}</a>
           ))}
         </div>
+        </div>
       </div>
     </section>
 
     <section id="experience" data-section>
       <div class="wrap sec">
-        <div class="sh" data-reveal><span class="mono">{num("experience")}</span><h2>Experience</h2></div>
+        <div class="sh" data-reveal><span class="mono">{num("experience")}</span><h2>Experience</h2><p class="note">{c.notes.experience}</p></div>
         <div class="body"><ol class="tl">
           {c.experience.map((e) => (
             <li data-reveal>
@@ -55,7 +58,7 @@ const num = (id: string) => String(sections.indexOf(id) + 1).padStart(2, "0");
 
     <section id="projects" data-section>
       <div class="wrap sec">
-        <div class="sh" data-reveal><span class="mono">{num("projects")}</span><h2>Projects</h2></div>
+        <div class="sh" data-reveal><span class="mono">{num("projects")}</span><h2>Projects</h2><p class="note">{c.notes.projects}</p></div>
         <div class="body">
           {[{ label: "", items: c.projects }, { label: "Side quests", items: c.sideQuests }].map((g) => (
             <>
@@ -86,7 +89,7 @@ const num = (id: string) => String(sections.indexOf(id) + 1).padStart(2, "0");
 
     <section id="skills" data-section>
       <div class="wrap sec">
-        <div class="sh" data-reveal><span class="mono">{num("skills")}</span><h2>Skills</h2></div>
+        <div class="sh" data-reveal><span class="mono">{num("skills")}</span><h2>Skills</h2><p class="note">{c.notes.skills}</p></div>
       </div>
       <div data-reveal>
         {rows.map((row, r) => (
@@ -111,9 +114,13 @@ const num = (id: string) => String(sections.indexOf(id) + 1).padStart(2, "0");
 
     <section id="contact" class="contact" data-section>
       <div class="wrap sec">
-        <div class="sh" data-reveal><span class="mono">{num("contact")}</span><h2>Contact</h2></div>
+        <div class="sh" data-reveal><span class="mono">{num("contact")}</span><h2>Contact</h2><p class="note">{c.notes.contact}</p></div>
         <div class="body"><p class="line" data-reveal>{c.contact.line}</p>
-        <a class="big ulink" data-reveal href={`mailto:${c.contact.email}`}>{c.contact.email}</a></div>
+        <a class="big ulink" data-reveal href={`mailto:${c.contact.email}`}>{c.contact.email}</a>
+        <div class="btns" data-reveal>
+          <a class="btn primary" href={`mailto:${c.contact.email}`}>Email me</a>
+          <button class="btn" type="button" data-copy={c.contact.email}>Copy email</button>
+        </div></div>
       </div>
     </section>
   </main>

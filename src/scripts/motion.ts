@@ -86,6 +86,20 @@ if (!reduced) {
     });
 }
 
+// ---- Copy email ----
+$<HTMLButtonElement>("[data-copy]").forEach((btn) => {
+  const label = btn.textContent;
+  btn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(btn.dataset.copy!);
+      btn.textContent = "Copied ✓";
+    } catch {
+      btn.textContent = "Copy failed";
+    }
+    setTimeout(() => (btn.textContent = label), 1600);
+  });
+});
+
 // ---- Active nav highlight ----
 const links = $<HTMLAnchorElement>("nav.top .ulink");
 $<HTMLElement>("[data-section]").forEach((sec) =>

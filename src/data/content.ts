@@ -7,6 +7,7 @@ export const content = {
   },
   hero: {
     name: "Josh",
+    avatarAlt: "Cartoon portrait of Josh in a cowboy hat and gold sunglasses, hands pressed together",
     eyebrow: "Builder · MComp @ NUS · ex-TikTok",
     tagline: "I build things I wish existed. 3+ years shipping ML at TikTok, now into AI, cloud and human-agent collaboration.",
     links: [
@@ -80,6 +81,12 @@ export const content = {
   contact: {
     line: "Open to roles in AI and software engineering. Say hello.",
     email: "joshualumzy@outlook.com",
+  },
+  notes: {
+    experience: "Work and study",
+    projects: "Things I've built",
+    skills: "What I use",
+    contact: "Get in touch",
   },
   nav: ["Experience", "Projects", "Skills", "Contact"],
 };

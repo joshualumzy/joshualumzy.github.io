@@ -116,3 +116,12 @@ footer{padding:var(--s-4) 0;font-size:.88rem;border-top:1px solid var(--line);ma
 @keyframes online{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 70%,transparent);opacity:1}50%{box-shadow:0 0 0 6px transparent;opacity:.55}}
 @media(prefers-reduced-motion:reduce){.logo::after{animation:none}}
 .sub{margin:var(--s-4) 0 var(--s-2);color:var(--muted,inherit);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+
+.note{margin:.5rem 0 0;color:var(--muted);font-size:.95rem}
+.hero-grid{display:flex;flex-direction:column;gap:var(--s-3)}
+.avatar{width:clamp(6.5rem,28vw,9rem);aspect-ratio:1;border-radius:50%;overflow:hidden;flex:none}
+.avatar img{display:block;width:100%;height:100%;transform:scale(1.05)}
+@media(min-width:900px){.hero-grid{flex-direction:row-reverse;align-items:center;justify-content:space-between;gap:var(--s-5)}.avatar{width:clamp(15rem,26vw,22rem)}}
+@media(min-width:900px){.card:not(.open){padding-right:18rem}.card:not(.open) .thumb{display:block;position:absolute;right:4.25rem;top:var(--s-3);width:13rem}}
+.contact .btns{margin-top:var(--s-3)}
+button.btn{font:inherit;font-weight:500;font-size:.95rem;cursor:pointer}
