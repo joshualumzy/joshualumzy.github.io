@@ -19,11 +19,12 @@ export const content = {
   projects: [
     {
       title: "NeuroLens",
-      outcome: "A tool that predicts which moments of a video engage the brain most, for neuromarketers.",
+      outcome: "Shows which moments of a video hold attention, so you can cut the stronger version before you publish.",
       description:
-        "NeuroLens runs Meta's TRIBE v2 brain-encoding model on a video and predicts neural activity second by second. It shows which moments are most engaging, and whether faces, scenes or audio are driving it. The full product has sign-in, uploads and GPU analysis on AWS; ten finished sample analyses are open to browse.",
+        "Give NeuroLens a video and it predicts, second by second, how an average viewer's brain responds, using Meta's TRIBE v2 model. A 3D brain and a timeline show where faces, scenes, speech and sound are landing, and an AI report points to the moments worth keeping or trimming. It runs as a full product with sign-in, uploads and GPU analysis on AWS.",
+      award: "Best Project (Platinum), CS5224 track at NUS STEPS",
       tags: ["Python", "Flask", "PyTorch", "TRIBE v2", "AWS"],
-      banner: { src: "/banners/neurolens.png", alt: "The NeuroLens 3D brain lighting up in red, with a timeline of predicted engagement below" },
+      banner: { src: "/banners/neurolens.png", alt: "Two NeuroLens screens: a second-by-second brain response analysis of a sample video, and the AI report with moments to keep or trim" },
       demo: "https://joshualumzy.github.io/neurolens-samples/",
       repo: "https://github.com/kelvinlowhm86/neurolens",
     },
@@ -33,7 +34,7 @@ export const content = {
       title: "Leetotter",
       outcome: "A Chrome side-panel tutor that remembers how you practise LeetCode and decides what to solve next.",
       description:
-        "Practising on NeetCode with an AI sidebar works, but the AI forgets what it taught you and nothing schedules revisits. Leetotter watches a session, nudges only when you're stuck, grades each attempt, and plans the next problem with spaced repetition (FSRS). A local Python companion runs the agents and stores everything in SQLite; the extension only reads the page and shows the UI. The plan was simulated before building, which showed that the supply of unseen problems, not retries, is the bottleneck.",
+        "A chatbot helps with one problem, then forgets you. Leetotter sits beside NeetCode's editor and keeps track of what you solved, where you slipped and what to do next. It gives interview-style hints only when you ask, often pointing back to a mistake from an earlier problem, and brings problems back before you forget them. Two independent graders check each solve, so \"done\" means you did it on your own. Your history stays on your Mac.",
       tags: ["Python", "TypeScript", "Chrome MV3", "SQLite", "FSRS"],
       banner: { src: "/banners/leetotter.png", alt: "The Leetotter side panel: a hint pointing back to an earlier mistake, and the Progress tab with strength per category" },
       demo: "",

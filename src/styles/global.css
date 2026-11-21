@@ -124,3 +124,4 @@ footer{padding:var(--s-4) 0;font-size:.88rem;border-top:1px solid var(--line);ma
 @media(min-width:900px){.hero-grid{flex-direction:row-reverse;align-items:center;justify-content:space-between;gap:var(--s-5)}.avatar{width:clamp(15rem,26vw,22rem)}}
 .contact .btns{margin-top:var(--s-3)}
 button.btn{font:inherit;font-weight:500;font-size:.95rem;cursor:pointer}
+.award{margin:0;color:var(--muted);font-size:.78rem}

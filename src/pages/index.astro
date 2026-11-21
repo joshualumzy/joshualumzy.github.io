@@ -71,6 +71,7 @@ const num = (id: string) => String(sections.indexOf(id) + 1).padStart(2, "0");
                   <img class="thumb" src={href(p.banner.src)} alt={p.banner.alt} loading="lazy" width="1400" height="560" />
                   <h3><button class="card-open" type="button" aria-haspopup="dialog">{p.title}</button></h3>
                   <p class="outcome">{p.outcome}</p>
+                  {p.award && <p class="award mono">★ {p.award}</p>}
                   <p class="detail">{p.description}</p>
                   <ul class="tags">{p.tags.map((t) => <li class="tag-chip">{t}</li>)}</ul>
                   <div class="links">
