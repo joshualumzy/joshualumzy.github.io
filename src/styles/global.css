@@ -55,7 +55,7 @@ nav.top ul{display:flex;gap:clamp(.5rem,2vw,1.25rem)}
 .card{position:relative;display:grid;gap:.5rem;padding:var(--s-3) var(--s-2);margin:0 calc(var(--s-2) * -1);border-top:1px solid var(--line);border-radius:0;background:transparent;transition:background var(--d-fast)}
 .slot:last-child .card{border-bottom:1px solid var(--line)}
 .card:not(.open):hover{background:var(--accent-soft)}
-.thumb{display:none;height:12rem;border-radius:6px;border:1px solid var(--line);background:var(--accent-soft) repeating-linear-gradient(45deg,transparent 0 9px,#0a0a0a14 9px 10px)}
+.thumb{display:none;width:100%;height:auto;aspect-ratio:5/2;object-fit:cover;border-radius:6px;border:1px solid var(--line)}
 .card h3{font-size:clamp(1.7rem,4vw,2.5rem);padding-right:2.5rem}
 .card:not(.open) h3::after{content:"↗";position:absolute;right:var(--s-2);top:var(--s-3);font-size:1.6rem;transition:transform var(--d-med) var(--ease)}
 .card:not(.open):hover h3::after{transform:translate(4px,-4px)}

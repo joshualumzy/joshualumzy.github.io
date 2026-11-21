@@ -22,6 +22,7 @@ export const content = {
       description:
         "NeuroLens runs Meta's TRIBE v2 brain-encoding model on a video and predicts neural activity second by second. It shows which moments are most engaging, and whether faces, scenes or audio are driving it. The full product has sign-in, uploads and GPU analysis on AWS; ten finished sample analyses are open to browse.",
       tags: ["Python", "Flask", "PyTorch", "TRIBE v2", "AWS"],
+      banner: { src: "/banners/neurolens.png", alt: "The NeuroLens 3D brain lighting up in red, with a timeline of predicted engagement below" },
       demo: "https://joshualumzy.github.io/neurolens-samples/",
       repo: "https://github.com/kelvinlowhm86/neurolens",
     },
@@ -33,6 +34,7 @@ export const content = {
       description:
         "Practising on NeetCode with an AI sidebar works, but the AI forgets what it taught you and nothing schedules revisits. Leetotter watches a session, nudges only when you're stuck, grades each attempt, and plans the next problem with spaced repetition (FSRS). A local Python companion runs the agents and stores everything in SQLite; the extension only reads the page and shows the UI. The plan was simulated before building, which showed that the supply of unseen problems, not retries, is the bottleneck.",
       tags: ["Python", "TypeScript", "Chrome MV3", "SQLite", "FSRS"],
+      banner: { src: "/banners/leetotter.png", alt: "The Leetotter side panel: a hint pointing back to an earlier mistake, and the Progress tab with strength per category" },
       demo: "",
       repo: "https://github.com/joshualumzy/leetotter",
     },
