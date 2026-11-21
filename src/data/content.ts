@@ -45,7 +45,7 @@ export const content = {
       role: "Masters of Computing",
       company: "National University of Singapore",
       dates: "Aug 2025 — Present",
-      bullets: ["Focusing on ML systems, cloud and deep learning."],
+      bullets: ["Focusing on ML systems, cloud and human-agent collaboration."],
     },
     {
       role: "AI Safety Trainee",
